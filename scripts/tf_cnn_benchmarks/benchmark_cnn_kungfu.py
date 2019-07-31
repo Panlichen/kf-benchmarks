@@ -180,9 +180,7 @@ flags.DEFINE_string('piecewise_partial_exchange_schedule', '',
                     'Partition budget schedule as percentages')
 flags.DEFINE_string(
     'kungfu_strategy', 'parallel',
-    'Name of KungFu strategy: parallel, ako, partial_exchange, partial_exchange_accumulation, \
-                    partial_exchange_accumulation_avg_peers, partial_exchange_accumulation_avg_window. \
-                    If not specified, default is parallel')
+    'Name of KungFu strategy: parallel, static, adaptive')
 
 flags.DEFINE_enum('model_averaging_device', 'cpu', ('cpu', 'gpu'),
                   'Device where model averaging should be executed')
@@ -376,19 +374,9 @@ flags.DEFINE_string(
     'optimized, write out each partitioned graph to a file '
     'with the given prefix.')
 
-flags.DEFINE_enum('optimizer', 'sgd', ('adaptive_p2p_averaging', 'hybrid_p2p_averaging', 'p2p_averaging', 'momentum', 'sgd', 'rmsprop', 'adam'),
+flags.DEFINE_enum('optimizer', 'sgd', ('adaptive_model_averaging', 'model_averaging', 'momentum', 'sgd', 'rmsprop', 'adam'),
                   'Optimizer to use')
-# Adaptive p2p window size
-flags.DEFINE_integer(
-    'window_size', 10,
-    'Adaptive peer selection sliding window for peer ranking based on latency.')
 
-flags.DEFINE_string('hybrid_model_averaging_schedule', None,
-                    'Hybrid model averaging schedule')
-flags.DEFINE_integer(
-    'hybrid_all_reduce_interval', 0,
-    'Perform all-reduce every hybrid_all_reduce_interval iterations during P2P-KF hybrid run'
-)
 flags.DEFINE_float('shard_size', 0, 'Shard size')
 
 flags.DEFINE_float('init_learning_rate', None,
@@ -1482,49 +1470,28 @@ def get_learning_rate(params, global_step, num_examples_per_epoch, model,
 
 def get_optimizer(params, learning_rate):
     """Returns the optimizer that should be used based on params."""
-    if params.optimizer == 'hybrid_p2p_averaging':
-        mlperf.logger.log(key=mlperf.tags.OPT_NAME,
-                        value=mlperf.tags.SGD_WITH_MOMENTUM)
-        mlperf.logger.log(key=mlperf.tags.OPT_MOMENTUM, value=params.momentum)
-        opt = tf.train.MomentumOptimizer(learning_rate,
-                                        params.momentum,
-                                        use_nesterov=True)
-        
-        from kungfu.optimizers import HybridPeerModelAveraging
-        print("BIG WARNING: YOU SHOULD ENSURE THAT THE HybridPeerModelAveraging initializer is used to initialize the store")
-        
-        
-        opt = HybridPeerModelAveraging(opt, params.hybrid_model_averaging_schedule, 
-                                      params.shard_size, params.batch_size, 
-                                      model_averaging_device=params.model_averaging_device, 
-                                      request_mode=params.request_mode,
-                                      peer_selection_strategy=params.peer_selection_strategy,
-                                      all_reduce_interval=params.hybrid_all_reduce_interval)
-    
-    elif params.optimizer == 'p2p_averaging':
+    if params.optimizer == 'model_averaging':
         mlperf.logger.log(key=mlperf.tags.OPT_NAME,
                           value=mlperf.tags.SGD_WITH_MOMENTUM)
         mlperf.logger.log(key=mlperf.tags.OPT_MOMENTUM, value=params.momentum)
         opt = tf.train.MomentumOptimizer(learning_rate,
                                          params.momentum,
                                          use_nesterov=True)
-        # Called PeerModelAveraging                                         
-        from kungfu.optimizers import PeerModelAveraging
-        print("BIG WARNING: YOU SHOULD ENSURE THAT THE PeerModelAveraging initializer is used to initialize the store")
-        opt = PeerModelAveraging(opt, model_averaging_device=params.model_averaging_device, 
+        from kungfu.optimizers import ModelAveragingOptimizer
+        print("BIG WARNING: You should ensure that the ModelAveragingOptimizer initializer is used to initialize the store")
+        opt = ModelAveragingOptimizer(opt, model_averaging_device=params.model_averaging_device, 
                                request_mode=params.request_mode,
-                               peer_selection_strategy=params.peer_selection_strategy, window_size=params.window_size)
-    elif params.optimizer == 'adaptive_p2p_averaging':
+                               peer_selection_strategy=params.peer_selection_strategy)
+    elif params.optimizer == 'adaptive_model_averaging':
         mlperf.logger.log(key=mlperf.tags.OPT_NAME,
                           value=mlperf.tags.SGD_WITH_MOMENTUM)
         mlperf.logger.log(key=mlperf.tags.OPT_MOMENTUM, value=params.momentum)
         opt = tf.train.MomentumOptimizer(learning_rate,
                                          params.momentum,
                                          use_nesterov=True)
-        # Called PeerModelAveraging                                         
-        from kungfu.optimizers import AdaptivePeerModelAveraging
-        print("BIG WARNING: YOU SHOULD ENSURE THAT THE PeerModelAveraging initializer is used to initialize the store")
-        opt = AdaptivePeerModelAveraging(opt, window_size=params.window_size)
+        from kungfu.optimizers import AdaptiveModelAveragingOptimizer
+        print("BIG WARNING: You should ensure that the AdaptiveModelAveragingOptimizer initializer is used to initialize the store")
+        opt = AdaptiveModelAveragingOptimizer(opt)
     elif params.optimizer == 'momentum':
         mlperf.logger.log(key=mlperf.tags.OPT_NAME,
                           value=mlperf.tags.SGD_WITH_MOMENTUM)
@@ -2705,19 +2672,19 @@ class BenchmarkCNN(object):
             bcast_global_variables_op = hvd.broadcast_global_variables(0)
         elif self.params.variable_update == 'kungfu':
             import kungfu as kf
-            bcast_global_variables_op = kf.distributed_variables_initializer()
-            if self.params.kungfu_strategy == 'none':
-                # Called Peer Model Averaging
-                from kungfu.optimizers import PeerModelAveraging
-                bcast_global_variables_op = PeerModelAveraging.get_initializer()
-            if self.params.kungfu_strategy == 'adaptive':
-                # Called Peer Model Averaging
-                from kungfu.optimizers import AdaptivePeerModelAveraging
-                bcast_global_variables_op = AdaptivePeerModelAveraging.get_initializer()
-            elif self.params.kungfu_strategy == 'hybrid':
-                from kungfu.optimizers import HybridPeerModelAveraging
-                bcast_global_variables_op = HybridPeerModelAveraging.get_initializer(
-                )
+            if self.params.kungfu_strategy == 'parallel':
+                # This case ensures that no boolean variables are initialized.
+                # Boolean variables are in the peer masks of adaptive model averaging
+                # and these are not supported by the broadcast operator
+                bcast_global_variables_op = kf.distributed_variables_initializer()
+            elif self.params.kungfu_strategy == 'static':
+                from kungfu.optimizers import ModelAveragingOptimizer
+                bcast_global_variables_op = ModelAveragingOptimizer.get_initializer()
+            elif self.params.kungfu_strategy == 'adaptive':
+                from kungfu.optimizers import AdaptiveModelAveragingOptimizer
+                bcast_global_variables_op = AdaptiveModelAveragingOptimizer.get_initializer()
+            else:
+                raise "Invalid KungFu optimizer: should be none or adaptive"
         else:
             bcast_global_variables_op = None
 
@@ -3851,50 +3818,7 @@ class BenchmarkCNN(object):
                 ]
 
             if self.params.variable_update == 'kungfu':
-                if self.params.kungfu_strategy == "ako_p2p":
-                    from kungfu.ops import ako_p2p
-                    grads = ako_p2p(grads,
-                                    self.params.partial_exchange_fraction)
-                elif self.params.kungfu_strategy == "partial_exchange":
-                    from kungfu.ops import partial_exchange_group_all_reduce
-                    num_train = datasets.CIFAR10_NUM_TRAIN_IMAGES if self.params.data_name == "cifar10" else datasets.IMAGENET_NUM_TRAIN_IMAGES
-                    grads = partial_exchange_group_all_reduce(
-                        grads,
-                        self.params.batch_size,
-                        num_train,
-                        fraction=self.params.partial_exchange_fraction,
-                        accumulate=False)
-                elif self.params.kungfu_strategy == "partial_exchange_group_all_reduce_with_schedule":
-                    from kungfu.ops import partial_exchange_group_all_reduce_with_schedule
-                    num_train = datasets.CIFAR10_NUM_TRAIN_IMAGES if self.params.data_name == "cifar10" else datasets.IMAGENET_NUM_TRAIN_IMAGES
-                    grads = partial_exchange_group_all_reduce_with_schedule(
-                        grads,
-                        self.params.batch_size,
-                        num_train,
-                        self.params.piecewise_partial_exchange_schedule,
-                    )
-                elif self.params.kungfu_strategy == "adaptive_partial_exchange_with_gpu_allreduce":
-                    from kungfu.ops import adaptive_partial_exchange_with_gpu_allreduce
-                    num_train = datasets.CIFAR10_NUM_TRAIN_IMAGES if self.params.data_name == "cifar10" else datasets.IMAGENET_NUM_TRAIN_IMAGES
-                    grads = adaptive_partial_exchange_with_gpu_allreduce(
-                        grads,
-                        self.params.batch_size,
-                        num_train,
-                        self.params.piecewise_partial_exchange_schedule,
-                        accumulate=False)
-                elif self.params.kungfu_strategy == "cpu_partial_exchange_frontend_partitioning":
-                    from kungfu.ops import cpu_partial_exchange_group_all_reduce_front_end_partitioning
-                    grads = cpu_partial_exchange_group_all_reduce_front_end_partitioning(
-                        grads,
-                        fraction=self.params.partial_exchange_fraction,
-                        accumulate=False)
-                elif self.params.kungfu_strategy == "gpu_partial_exchange_frontend_partitioning":
-                    from kungfu.ops import partial_exchange_with_gpu_allreduce
-                    grads = partial_exchange_with_gpu_allreduce(
-                        grads,
-                        fraction=self.params.partial_exchange_fraction,
-                        accumulate=False)
-                elif self.params.kungfu_strategy == "cpu_all_reduce":
+                if self.params.kungfu_strategy == "cpu_all_reduce":
                     from kungfu.ops import cpu_group_all_reduce
                     grads = cpu_group_all_reduce(grads)
                 elif self.params.kungfu_strategy == "cpu_all_reduce_noise":
@@ -3904,7 +3828,7 @@ class BenchmarkCNN(object):
                 elif self.params.kungfu_strategy == "nccl_all_reduce":
                     from kungfu.ops import gpu_group_all_reduce
                     grads = gpu_group_all_reduce(grads)
-                elif self.params.kungfu_strategy == "none":
+                elif self.params.kungfu_strategy == "static":
                     pass
                 elif self.params.kungfu_strategy == "adaptive":
                     pass
