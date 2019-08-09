@@ -2,15 +2,15 @@
 
 RUN=1
 
-mkdir /home/ab7515/checkpoints-test
+mkdir /data/kungfu/checkpoints-test
 
 train() {
     BATCH=$1
-    echo "[BEGIN TRAINING KEY] training-lbr-${RUN}"
-    # --data_dir=/data/imagenet/records
+    echo "[BEGIN TRAINING KEY] training-${RUN}"
     kungfu-prun  -np 4 -H 127.0.0.1:4 -timeout 1000000s \
-        python3 tf_cnn_benchmarks.py --model=resnet32 --data_name=cifar10  \
-        --num_epochs=5 \
+        python3 tf_cnn_benchmarks.py --model=resnet50 --data_name=imagenet  \
+        --data_dir=/data/imagenet/records \
+        --num_epochs=10 \
         --eval=False \
         --forward_only=False \
         --print_training_accuracy=True \
@@ -23,6 +23,7 @@ train() {
         --variable_update=kungfu \
         --optimizer=adaptive_model_averaging \
         --kungfu_strategy=adaptive \
+        --mst_rebuild_epochs=1,3,5 \
         --model_averaging_device=gpu \
         --request_mode=sync \
         --use_datasets=True \
@@ -30,27 +31,31 @@ train() {
         --fuse_decode_and_crop=True \
         --resize_method=bilinear \
         --display_every=100 \
-        --checkpoint_every_n_epochs=False \
+        --checkpoint_every_n_epochs=True \
         --checkpoint_interval=0.25 \
-        --checkpoint_directory=/home/ab7515/checkpoints-test \
+        --checkpoint_directory=/data/kungfu/checkpoints-test/checkpoint-test \
         --data_format=NHWC \
         --batchnorm_persistent=True \
         --use_tf_layers=True \
         --winograd_nonfused=True
-    echo "[END TRAINING KEY] training-lbr-${RUN}"
+    echo "[END TRAINING KEY] training-${RUN}"
 }
 
 validate() {
-    for worker in 0 # 1 2 3 4 5 6 7
+    for worker in 0 1 2 3
     do
-    echo "[BEGIN VALIDATION KEY] validation-lbr-${RUN}-worker-${worker}"
-    python3 tf_cnn_benchmarks.py --eval=True --forward_only=False --model=resnet32 --data_name=cifar10 \
-        --data_dir=/data/cifar-10/cifar-10-batches-py \
+    echo "[BEGIN VALIDATION KEY] validation-${RUN}-worker-${worker}"
+    python3 tf_cnn_benchmarks.py \
+        --eval=True \
+        --forward_only=False \
+        --model=resnet50 \
+        --data_name=imagenet \
+        --data_dir=/data/imagenet/records \
         --variable_update=replicated --data_format=NCHW --use_datasets=False --num_batches=50 --eval_batch_size=50 \
         --num_gpus=4 --use_tf_layers=True \
-        --checkpoint_directory=/data/kungfu/checkpoints-lbr/checkpoint-worker-${worker}/v-000001 --checkpoint_interval=0.25 \
+        --checkpoint_directory=/data/kungfu/checkpoints-test/checkpoint-test-worker-${worker}/v-000001 --checkpoint_interval=0.25 \
         --checkpoint_every_n_epochs=True 
-    echo "[END VALIDATION KEY] validation-lbr-${RUN}-worker-${worker}"
+    echo "[END VALIDATION KEY] validation-${RUN}-worker-${worker}"
     done
 }
 

@@ -380,7 +380,10 @@ flags.DEFINE_enum('optimizer', 'sgd', ('adaptive_model_averaging', 'model_averag
 flags.DEFINE_float('shard_size', 0, 'Shard size')
 
 flags.DEFINE_float('init_learning_rate', None,
-                   'Initial learning rate for training.')
+                   'Initial learning rate for training.')        
+flags.DEFINE_string(
+    'mst_rebuild_epochs', None, 'Adaptive model averaging schedule for rebuilding the MST')
+        
 flags.DEFINE_string(
     'piecewise_learning_rate_schedule', None,
     'Specifies a piecewise learning rate schedule based on the '
@@ -1468,7 +1471,7 @@ def get_learning_rate(params, global_step, num_examples_per_epoch, model,
     return learning_rate
 
 
-def get_optimizer(params, learning_rate):
+def get_optimizer(params, learning_rate, dataset):
     """Returns the optimizer that should be used based on params."""
     if params.optimizer == 'model_averaging':
         mlperf.logger.log(key=mlperf.tags.OPT_NAME,
@@ -1491,7 +1494,9 @@ def get_optimizer(params, learning_rate):
                                          use_nesterov=True)
         from kungfu.optimizers import AdaptiveModelAveragingOptimizer
         print("BIG WARNING: You should ensure that the AdaptiveModelAveragingOptimizer initializer is used to initialize the store")
-        opt = AdaptiveModelAveragingOptimizer(opt)
+        num_train = dataset.num_examples_per_epoch('train')
+        print("DBG> num train: " + str(num_train))
+        opt = AdaptiveModelAveragingOptimizer(opt, params.batch_size, num_train, mst_rebuild_epochs=params.mst_rebuild_epochs)
     elif params.optimizer == 'momentum':
         mlperf.logger.log(key=mlperf.tags.OPT_NAME,
                           value=mlperf.tags.SGD_WITH_MOMENTUM)
@@ -3481,7 +3486,7 @@ class BenchmarkCNN(object):
 
                 learning_rate = tf.identity(learning_rate,
                                             name='learning_rate_tensor')
-                opt = get_optimizer(self.params, learning_rate)
+                opt = get_optimizer(self.params, learning_rate, self.dataset)
                 loss_scale_params = variable_mgr_util.AutoLossScaleParams(
                     enable_auto_loss_scale=self.enable_auto_loss_scale,
                     loss_scale=self.loss_scale,
