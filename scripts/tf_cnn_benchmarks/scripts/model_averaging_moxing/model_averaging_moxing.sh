@@ -6,7 +6,7 @@ cd /home/work/user-job-dir/benchmarks-paper/scripts/tf_cnn_benchmarks/
 
 BATCH_SIZE=64
 
-kungfu-prun -np 16 -H 169.254.128.207:8,169.254.128.185:8 -nic ib0 -timeout 1000000s \
+/KungFu/bin/kungfu-huawei-launcher -timeout 1000000s \
     python tf_cnn_benchmarks.py --model=resnet50 \
     --data_name=imagenet \
     --num_batches=1000 \
@@ -21,6 +21,7 @@ kungfu-prun -np 16 -H 169.254.128.207:8,169.254.128.185:8 -nic ib0 -timeout 1000
     --staged_vars=False \
     --variable_update=kungfu \
     --optimizer=adaptive_model_averaging \
+    --mst_rebuild_epochs=0.02,1000 \
     --kungfu_strategy=adaptive \
     --model_averaging_device=gpu \
     --request_mode=sync \

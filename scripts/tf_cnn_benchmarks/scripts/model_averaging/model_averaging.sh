@@ -23,7 +23,7 @@ train() {
         --variable_update=kungfu \
         --optimizer=adaptive_model_averaging \
         --kungfu_strategy=adaptive \
-        --mst_rebuild_epochs=1,3,5 \
+        --mst_rebuild_epochs=0,0.001,0.002 \
         --model_averaging_device=gpu \
         --request_mode=sync \
         --use_datasets=True \
