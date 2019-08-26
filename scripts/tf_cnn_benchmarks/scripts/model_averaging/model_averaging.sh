@@ -8,9 +8,11 @@ train() {
     BATCH=$1
     echo "[BEGIN TRAINING KEY] training-${RUN}"
     kungfu-prun  -np 4 -H 127.0.0.1:4 -timeout 1000000s \
-        python3 tf_cnn_benchmarks.py --model=resnet50 --data_name=imagenet  \
-        --data_dir=/data/imagenet/records \
-        --num_epochs=10 \
+        python3 tf_cnn_benchmarks.py \
+        --model=resnet50 \
+        --data_name=imagenet \
+        --data_dir=/data/imagenet/records/ \
+        --num_batches=500 \
         --eval=False \
         --forward_only=False \
         --print_training_accuracy=True \
@@ -21,9 +23,8 @@ train() {
         --weight_decay=0.0001 \
         --staged_vars=False \
         --variable_update=kungfu \
-        --optimizer=adaptive_model_averaging \
-        --kungfu_strategy=adaptive \
-        --mst_rebuild_epochs=0,0.001,0.002 \
+        --optimizer=model_averaging \
+        --kungfu_strategy=monitoring_static \
         --model_averaging_device=gpu \
         --request_mode=sync \
         --use_datasets=True \
@@ -50,7 +51,7 @@ validate() {
         --forward_only=False \
         --model=resnet50 \
         --data_name=imagenet \
-        --data_dir=/data/imagenet/records \
+        --data_dir=/data/imagenet/records/ \
         --variable_update=replicated --data_format=NCHW --use_datasets=False --num_batches=50 --eval_batch_size=50 \
         --num_gpus=4 --use_tf_layers=True \
         --checkpoint_directory=/data/kungfu/checkpoints-test/checkpoint-test-worker-${worker}/v-000001 --checkpoint_interval=0.25 \

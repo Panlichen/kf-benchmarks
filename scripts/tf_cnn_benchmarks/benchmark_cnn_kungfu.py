@@ -374,16 +374,17 @@ flags.DEFINE_string(
     'optimized, write out each partitioned graph to a file '
     'with the given prefix.')
 
-flags.DEFINE_enum('optimizer', 'sgd', ('adaptive_model_averaging', 'model_averaging', 'momentum', 'sgd', 'rmsprop', 'adam'),
+flags.DEFINE_enum('optimizer', 'sgd', ('sma', 'adaptive_model_averaging', 'model_averaging', 'momentum', 'sgd', 'rmsprop', 'adam'),
                   'Optimizer to use')
 
-flags.DEFINE_float('shard_size', 0, 'Shard size')
+flags.DEFINE_float('sma_momentum', None,
+                   'Synchronous model averaging momentum optimizer')        
 
-flags.DEFINE_float('init_learning_rate', None,
-                   'Initial learning rate for training.')        
 flags.DEFINE_string(
     'mst_rebuild_epochs', None, 'Adaptive model averaging schedule for rebuilding the MST')
-        
+    
+flags.DEFINE_float('init_learning_rate', None,
+                   'Initial learning rate for training.')        
 flags.DEFINE_string(
     'piecewise_learning_rate_schedule', None,
     'Specifies a piecewise learning rate schedule based on the '
@@ -1497,6 +1498,16 @@ def get_optimizer(params, learning_rate, dataset):
         num_train = dataset.num_examples_per_epoch('train')
         print("DBG> num train: " + str(num_train))
         opt = AdaptiveModelAveragingOptimizer(opt, params.batch_size, num_train, mst_rebuild_epochs=params.mst_rebuild_epochs)
+    elif params.optimizer == 'sma':
+        mlperf.logger.log(key=mlperf.tags.OPT_NAME,
+                          value=mlperf.tags.SGD_WITH_MOMENTUM)
+        mlperf.logger.log(key=mlperf.tags.OPT_MOMENTUM, value=params.momentum)
+        opt = tf.train.MomentumOptimizer(learning_rate,
+                                         params.momentum,
+                                         use_nesterov=True)
+        from kungfu.optimizers import SynchronousModelAveragingOptimizer
+        print("BIG WARNING: You should ensure that the SynchronousModelAveragingOptimizer initializer is used to initialize the store")
+        opt = SynchronousModelAveragingOptimizer(opt, mu=params.sma_momentum)
     elif params.optimizer == 'momentum':
         mlperf.logger.log(key=mlperf.tags.OPT_NAME,
                           value=mlperf.tags.SGD_WITH_MOMENTUM)
@@ -2682,12 +2693,15 @@ class BenchmarkCNN(object):
                 # Boolean variables are in the peer masks of adaptive model averaging
                 # and these are not supported by the broadcast operator
                 bcast_global_variables_op = kf.distributed_variables_initializer()
-            elif self.params.kungfu_strategy == 'static':
+            elif self.params.kungfu_strategy == 'static' or self.params.kungfu_strategy == 'monitoring_static':
                 from kungfu.optimizers import ModelAveragingOptimizer
                 bcast_global_variables_op = ModelAveragingOptimizer.get_initializer()
             elif self.params.kungfu_strategy == 'adaptive':
                 from kungfu.optimizers import AdaptiveModelAveragingOptimizer
                 bcast_global_variables_op = AdaptiveModelAveragingOptimizer.get_initializer()
+            elif self.params.kungfu_strategy == 'sma':
+                from kungfu.optimizers import SynchronousModelAveragingOptimizer
+                bcast_global_variables_op = SynchronousModelAveragingOptimizer.get_initializer()
             else:
                 raise "Invalid KungFu optimizer: should be none or adaptive"
         else:
@@ -3823,10 +3837,10 @@ class BenchmarkCNN(object):
                 ]
 
             if self.params.variable_update == 'kungfu':
-                if self.params.kungfu_strategy == "cpu_all_reduce":
+                if self.params.kungfu_strategy == "parallel":
                     from kungfu.ops import cpu_group_all_reduce
                     grads = cpu_group_all_reduce(grads)
-                elif self.params.kungfu_strategy == "cpu_all_reduce_noise":
+                elif self.params.kungfu_strategy == "parallel_noise":
                     from kungfu.ops import cpu_group_all_reduce_variance_monitor
                     grads = cpu_group_all_reduce_variance_monitor(
                         grads, self.params.batch_size)
@@ -3835,7 +3849,12 @@ class BenchmarkCNN(object):
                     grads = gpu_group_all_reduce(grads)
                 elif self.params.kungfu_strategy == "static":
                     pass
+                elif self.params.kungfu_strategy == "monitoring_static":
+                    from kungfu.ops import loss_monitor
+                    grads = loss_monitor(grads, total_loss)
                 elif self.params.kungfu_strategy == "adaptive":
+                    pass
+                elif self.params.kungfu_strategy == "sma":
                     pass
                 else:
                     print(self.params.kungfu_strategy)
