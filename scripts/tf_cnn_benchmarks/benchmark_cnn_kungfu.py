@@ -3851,7 +3851,8 @@ class BenchmarkCNN(object):
                     pass
                 elif self.params.kungfu_strategy == "monitoring_static":
                     from kungfu.ops import loss_monitor
-                    grads = loss_monitor(grads, total_loss)
+                    local_steps_per_epoch  = int(float(self.dataset.num_examples_per_epoch('train')) / float(self.params.batch_size))
+                    grads = loss_monitor(grads, total_loss, local_steps_per_epoch)
                 elif self.params.kungfu_strategy == "adaptive":
                     pass
                 elif self.params.kungfu_strategy == "sma":
