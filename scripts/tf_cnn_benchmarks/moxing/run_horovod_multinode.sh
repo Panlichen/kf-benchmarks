@@ -17,15 +17,7 @@ kubectl config set-credentials me --token "$TOKEN"
 kubectl config set-context me@this --cluster=this --user=me --namespace "$NAMESPACE"
 kubectl config use me@this
 
-# curl -v --cacert $KUBE_SA_CONFIG/ca.crt https://kubernetes/ -H "Authorization: Bearer $TOKEN"
-# kubectl get ns
 kubectl get pods
-# kubectl get deployments
-# kubectl get ds
-# kubectl get sa
-# kubectl get cm
-
-
 kubectl config view
 
 
@@ -44,6 +36,13 @@ then
 mpirun --allow-run-as-root -np 16 \
     -mca plm_rsh_agent $PWD/moxing/kube-plm-rsh-agent \
     --hostfile $PWD/moxing/hostfile \
+    --bind-to socket \
+    -x LD_LIBRARY_PATH \
+    -x NCCL_DEBUG=INFO -x NCCL_SOCKET_IFNAME=ib0,bond0,eth0 -x NCCL_SOCKET_FAMILY=AF_INET -x NCCL_IB_DISABLE=0 \
+    -x HOROVOD_MPI_THREADS_DISABLE=1 \
+    -mca pml ob1 -mca btl ^openib \
+    -mca plm_rsh_no_tree_spawn true \
+    -mca btl_tcp_if_include 192.168.0.0/16 \
     python tf_cnn_benchmarks.py --model=resnet50 \
     --data_name=imagenet \
     --num_batches=1000 \
