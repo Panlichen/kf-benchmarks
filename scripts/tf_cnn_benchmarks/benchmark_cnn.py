@@ -526,6 +526,10 @@ flags.DEFINE_enum('variable_update', 'parameter_server',
                   'The method for managing variables: parameter_server, '
                   'replicated, distributed_replicated, independent, '
                   'distributed_all_reduce, collective_all_reduce, horovod')
+flags.DEFINE_string('kungfu', None,
+                    'KungFu optimizer: sync-sgd, elastic-sgd')
+flags.DEFINE_string('kungfu_schedule', None,
+                    'The schedule of an elastic SGD.')
 flags.DEFINE_string('all_reduce_spec', None,
                     'A specification of the all_reduce algorithm to be used '
                     'for reducing gradients.  For more details, see '
@@ -1185,6 +1189,16 @@ def get_optimizer(params, learning_rate):
   else:
     raise ValueError('Optimizer "%s" was not recognized',
                      params.optimizer)
+
+  if params.kungfu == 'sync-sgd':
+    from kungfu.optimizers import SyncSGDOptimizer
+    opt = SyncSGDOptimizer(opt)
+  elif params.kungfu == 'elastic-sgd':
+    from kungfu.optimizers import ElasticSGDOptimizer
+    opt = ElasticSGDOptimizer(opt, params.kungfu_schedule)
+  else:
+    raise ValueError('KungFu optimizer "%s" was not recognized',
+                     params.kungfu)
   return opt
 
 
