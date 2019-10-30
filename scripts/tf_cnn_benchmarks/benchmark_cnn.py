@@ -519,13 +519,16 @@ flags.DEFINE_integer('fp16_inc_loss_scale_every_n', 1000,
 #       an MPI framework (e.g. Open MPI). Each worker runs training on
 #       single GPU, and averages gradients using NCCL or MPI all-reduce.
 #       See https://github.com/uber/horovod for more details.
+#   kungfu: Distributed training using KungFu library.
 flags.DEFINE_enum('variable_update', 'parameter_server',
                   ('parameter_server', 'replicated', 'distributed_replicated',
                    'independent', 'distributed_all_reduce',
-                   'collective_all_reduce', 'horovod'),
+                   'collective_all_reduce', 'horovod', 'kungfu'),
                   'The method for managing variables: parameter_server, '
                   'replicated, distributed_replicated, independent, '
-                  'distributed_all_reduce, collective_all_reduce, horovod')
+                  'distributed_all_reduce, collective_all_reduce, horovod, kungfu')
+flags.DEFINE_enum('kungfu_option', 'sync_sgd', ('async_sgd', 'sync_sgd', 'ada_sgd'),
+                  'KungFu synchronisation strategy to use')
 flags.DEFINE_string('all_reduce_spec', None,
                     'A specification of the all_reduce algorithm to be used '
                     'for reducing gradients.  For more details, see '
@@ -747,6 +750,8 @@ def create_config_proto(params):
   if params.variable_update == 'horovod':
     import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
     config.gpu_options.visible_device_list = str(hvd.local_rank())
+  if params.variable_update == 'kungfu':
+    pass
 
   return config
 
@@ -1165,7 +1170,6 @@ def get_learning_rate(params, global_step, num_examples_per_epoch, model,
 
   return learning_rate
 
-
 def get_optimizer(params, learning_rate):
   """Returns the optimizer that should be used based on params."""
   if params.optimizer == 'momentum':
@@ -1185,6 +1189,20 @@ def get_optimizer(params, learning_rate):
   else:
     raise ValueError('Optimizer "%s" was not recognized',
                      params.optimizer)
+
+  if params.variable_update == 'kungfu':
+    if params.kungfu_option == 'sync_sgd':
+      from kungfu.tensorflow.v1.optimizers import SynchronousSGDOptimizer
+      opt = SynchronousSGDOptimizer(opt)
+    elif params.kungfu_option == 'async_sgd':
+      from kungfu.tensorflow.v1.optimizers import PairAveragingOptimizer
+      opt = PairAveragingOptimizer(opt, fuse_requests=True)
+    elif params.kungfu_option == 'sma':
+      from kungfu.tensorflow.v1.optimizers import SynchronousAveragingOptimizer
+      opt = SynchronousAveragingOptimizer(opt)
+    else:
+      raise ValueError('KungFu distributed option "%s" was not recognized',
+                     params.kungfu_option)
   return opt
 
 
@@ -1288,6 +1306,12 @@ class BenchmarkCNN(object):
 
     if self.params.variable_update == 'horovod' and self.params.job_name:
       raise ValueError('job_name should not be specified for Horovod.')
+
+    if self.params.variable_update == 'kungfu' and self.params.num_gpus > 1:
+      raise ValueError('KungFu benchmarks require num_gpus=1 on each worker')
+
+    if self.params.variable_update == 'kungfu' and self.params.job_name:
+      raise ValueError('job_name should not be specified for KungFu.')
 
     if self.params.use_fp16 and self.params.fp16_enable_auto_loss_scale:
       if self.params.all_reduce_spec and 'nccl' in self.params.all_reduce_spec:
@@ -1427,6 +1451,9 @@ class BenchmarkCNN(object):
     elif self.params.variable_update == 'horovod':
       import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
       self.num_workers = hvd.size()
+    elif self.params.variable_update == 'kungfu':
+      from kungfu import current_cluster_size # pylint: disable=g-import-not-at-top
+      self.num_workers = current_cluster_size()
     else:
       self.num_workers = 1
     self.num_ps = self.cluster_manager.num_ps() if self.cluster_manager else 0
@@ -1544,7 +1571,7 @@ class BenchmarkCNN(object):
         raise ValueError('Invalid variable_update in local mode: %s' %
                          self.params.variable_update)
       self.variable_mgr = variable_mgr.VariableMgrDistributedReplicated(self)
-    elif self.params.variable_update in ('independent', 'horovod'):
+    elif self.params.variable_update in ('independent', 'horovod', 'kungfu'):
       if self.job_name:
         raise ValueError('Invalid variable_update in distributed mode: %s' %
                          self.params.variable_update)
@@ -1695,6 +1722,8 @@ class BenchmarkCNN(object):
       log_fn('Staged vars: %s' % self.params.staged_vars)
     if self.params.variable_update == 'horovod' and self.params.horovod_device:
       log_fn('Horovod on:  %s' % self.params.horovod_device)
+    if self.params.variable_update == 'kungfu' and self.params.kungfu_option:
+      log_fn('KungFu option:  %s' % self.params.kungfu_option)
     log_fn('==========')
 
   def _get_params_info(self):
@@ -1711,6 +1740,9 @@ class BenchmarkCNN(object):
       device_list = self.raw_devices_across_tasks()
     elif self.params.variable_update == 'horovod':
       device_list = ['horovod/%s:%d' % (self.params.device, idx)
+                     for idx in range(self.num_workers)]
+    elif self.params.variable_update == 'kungfu':
+      device_list = ['kungfu/%s:%d' % (self.params.device, idx)
                      for idx in range(self.num_workers)]
     else:
       device_list = self.raw_devices
@@ -2072,6 +2104,11 @@ class BenchmarkCNN(object):
       # First worker will be 'chief' - it will write summaries and
       # save checkpoints.
       is_chief = hvd.rank() == 0
+    elif self.params.variable_update == 'kungfu':
+      from kungfu import current_rank  # pylint: disable=g-import-not-at-top
+      # First worker will be 'chief' - it will write summaries and
+      # save checkpoints.
+      is_chief = current_rank() == 0
     else:
       is_chief = (not self.job_name or self.task_index == 0)
 
@@ -2119,6 +2156,9 @@ class BenchmarkCNN(object):
     if self.params.variable_update == 'horovod':
       import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
       bcast_global_variables_op = hvd.broadcast_global_variables(0)
+    elif self.params.variable_update == 'kungfu':
+      from kungfu.tensorflow.v1.initializer import BroadcastGlobalVariablesOp
+      bcast_global_variables_op = BroadcastGlobalVariablesOp()
     else:
       bcast_global_variables_op = None
 
@@ -2139,12 +2179,13 @@ class BenchmarkCNN(object):
       with tf.control_dependencies(local_var_init_ops):
         local_var_init_ops.append(eval_graph_info.local_var_init_op_group)
     sv = tf.train.Supervisor(
-        # For the purpose of Supervisor, all Horovod workers are 'chiefs',
+        # For the purpose of Supervisor, all Horovod and KungFu workers are 'chiefs',
         # since we want session to be initialized symmetrically on all the
         # workers.
         is_chief=is_chief or (self.params.variable_update == 'horovod'
+                              or self.params.variable_update == 'kungfu'
                               or self.distributed_collective),
-        # Log dir should be unset on non-chief workers to prevent Horovod
+        # Log dir should be unset on non-chief workers to prevent Horovod and KungFu
         # workers from corrupting each other's checkpoints.
         logdir=self.params.train_dir if is_chief else None,
         ready_for_local_init_op=ready_for_local_init_op,
@@ -2207,7 +2248,9 @@ class BenchmarkCNN(object):
       eval_graph_info: Similar to graph_info but for the eval graph if
         --eval_during_training_every_n_steps is used. Otherwise, None.
       bcast_global_variables_op: If Horovod is used, the op to broadcast the
-        global variables to all the processes. None if Horovod is not used.
+        global variables to all the processes. If KungFu is used, the op
+        will initialise global variables on all processes based on the required
+        distributed initializer. None if Horovod or KungFu is not used.
       is_chief: True if this is the chief process.
       summary_writer: The SummaryWriter used to write summaries, or None if
         summaries are not used.
@@ -2644,8 +2687,12 @@ class BenchmarkCNN(object):
     if self.params.variable_update == 'horovod':
       import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
       seed_adjustment = hvd.rank()
+    elif self.params.variable_update == 'kungfu':
+      from kungfu import current_rank  # pylint: disable=g-import-not-at-top
+      seed_adjustment = current_rank()
     else:
       seed_adjustment = 0
+
     tf.set_random_seed(self.params.tf_random_seed + seed_adjustment)
     np.random.seed(4321 + seed_adjustment)
     phase_train = not (self._doing_eval or self.params.forward_only)
@@ -2769,6 +2816,7 @@ class BenchmarkCNN(object):
 
     # TODO(reedwm): Greatly simplify the learning rate code.
     if (self.params.variable_update == 'horovod' or
+        self.params.variable_update == 'kungfu' or
         self.params.variable_update == 'collective_all_reduce'):
       # Each worker independently increments global_step.
       examples_per_step = self.batch_size * self.num_workers
@@ -3142,6 +3190,9 @@ class BenchmarkCNN(object):
         grads = [hvd.allreduce(grad, average=False, device_dense=horovod_device)
                  for grad in grads]
 
+      if self.params.variable_update == 'kungfu':
+        pass # We intercept the gradients in optimizers not here.
+
       if self.params.staged_vars:
         grad_dtypes = [grad.dtype for grad in grads]
         grad_shapes = [grad.shape for grad in grads]
@@ -3388,6 +3439,9 @@ def setup(params):
   if params.variable_update == 'horovod':
     import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
     hvd.init()
+
+  if params.variable_update == 'kungfu':
+    log_fn('KungFu does not require to call init()')
 
   platforms_util.initialize(params, create_config_proto(params))
 

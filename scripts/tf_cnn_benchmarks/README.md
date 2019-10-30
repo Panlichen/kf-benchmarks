@@ -87,3 +87,28 @@ To run an individual test, such as method `testParameterServer` of test class
 ```bash
 python -m unittest -v benchmark_cnn_test.TfCnnBenchmarksTest.testParameterServer
 ```
+
+## Running KungFu
+
+Assuming you run the benchmark on a 8-GPU machine.
+
+### KungFu
+
+```bash
+kungfu-run -np 8 python3 tf_cnn_benchmarks.py --data_format=NCHW --batch_size=64 \
+--model=resnet50 --optimizer=momentum --variable_update=kungfu --kungfu_option=sync_sgd \
+--nodistortions --num_gpus=1 \
+--num_epochs=90 --weight_decay=1e-4 --data_dir=${DATA_DIR}
+```
+
+You can compare the KungFu result with Horovod which implements
+the traditional synchronous SGD.
+
+### Horovod
+
+```bash
+mpirun -np 8 python3 tf_cnn_benchmarks.py --data_format=NCHW --batch_size=64 \
+--model=resnet50 --optimizer=momentum --variable_update=horovod \
+--nodistortions --num_gpus=1 \
+--num_epochs=90 --weight_decay=1e-4 --data_dir=${DATA_DIR}
+```

@@ -55,6 +55,10 @@ def main(positional_arguments):
   bench.print_info()
   bench.run()
 
+  if params.variable_update == 'kungfu':
+    from kungfu import run_barrier
+    run_barrier()
+
 
 if __name__ == '__main__':
   app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
