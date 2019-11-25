@@ -1192,13 +1192,13 @@ def get_optimizer(params, learning_rate):
 
   if params.variable_update == 'kungfu':
     if params.kungfu_option == 'sync_sgd':
-      from kungfu.tensorflow.v1.optimizers import SynchronousSGDOptimizer
+      from kungfu.tensorflow.optimizers import SynchronousSGDOptimizer
       opt = SynchronousSGDOptimizer(opt)
     elif params.kungfu_option == 'async_sgd':
-      from kungfu.tensorflow.v1.optimizers import PairAveragingOptimizer
-      opt = PairAveragingOptimizer(opt, fuse_requests=True)
+      from kungfu.tensorflow.optimizers import PairAveragingOptimizer
+      opt = PairAveragingOptimizer(opt)
     elif params.kungfu_option == 'sma':
-      from kungfu.tensorflow.v1.optimizers import SynchronousAveragingOptimizer
+      from kungfu.tensorflow.optimizers import SynchronousAveragingOptimizer
       opt = SynchronousAveragingOptimizer(opt)
     else:
       raise ValueError('KungFu distributed option "%s" was not recognized',
@@ -2157,8 +2157,9 @@ class BenchmarkCNN(object):
       import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
       bcast_global_variables_op = hvd.broadcast_global_variables(0)
     elif self.params.variable_update == 'kungfu':
-      from kungfu.tensorflow.v1.initializer import BroadcastGlobalVariablesOp
-      bcast_global_variables_op = BroadcastGlobalVariablesOp()
+      from kungfu.tensorflow.ops import broadcast
+      ops = [tf.assign(v, broadcast(v)) for v in tf.global_variables()]
+      bcast_global_variables_op = tf.group(ops)
     else:
       bcast_global_variables_op = None
 
