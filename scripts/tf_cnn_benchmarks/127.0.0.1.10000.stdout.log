@@ -1,0 +1,38 @@
+TensorFlow:  2.5
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  32 global
+             32.0 per device
+Num batches: 3603282
+Num epochs:  90.00
+Devices:     ['horovod/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   horovod
+==========
+Generating training model
+shapes: self.top_layer: [32, 3, 224, 224]
+shapes: network.top_layer 1: [32, 3, 224, 224]
+shapes: network.top_layer 2: [32, 3, 224, 224]
+cnn.top_layer.shape: [32, 64, 56, 256]
+cnn.top_layer.shape: [32, 64, 56, 256]
+cnn.top_layer.shape: [32, 64, 56, 256]
+cnn.top_layer.shape: [32, 32, 28, 512]
+cnn.top_layer.shape: [32, 32, 28, 512]
+cnn.top_layer.shape: [32, 32, 28, 512]
+cnn.top_layer.shape: [32, 32, 28, 512]
+cnn.top_layer.shape: [32, 16, 14, 1024]
+cnn.top_layer.shape: [32, 16, 14, 1024]
+cnn.top_layer.shape: [32, 16, 14, 1024]
+cnn.top_layer.shape: [32, 16, 14, 1024]
+cnn.top_layer.shape: [32, 16, 14, 1024]
+cnn.top_layer.shape: [32, 16, 14, 1024]
+cnn.top_layer.shape: [32, 8, 7, 2048]
+cnn.top_layer.shape: [32, 8, 7, 2048]
+cnn.top_layer.shape: [32, 8, 7, 2048]
+shape: cnn.top_layer 11: [32, 8, 7, 2048]
+shape: self.top_layer 0000: [32, 8, 7, 2048]
+shape: self.top_layer 1111: [32, 8]
+shapes: network.top_layer 3: [32, 8]

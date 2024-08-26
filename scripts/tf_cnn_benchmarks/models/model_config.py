@@ -18,34 +18,34 @@
 
 from functools import partial
 
-from models import alexnet_model
-from models import densenet_model
-from models import googlenet_model
-from models import inception_model
-from models import lenet_model
-from models import mobilenet_v2
-from models import nasnet_model
+# from models import alexnet_model
+# from models import densenet_model
+# from models import googlenet_model
+# from models import inception_model
+# from models import lenet_model
+# from models import mobilenet_v2
+# from models import nasnet_model
 from models import official_resnet_model
-from models import overfeat_model
+# from models import overfeat_model
 from models import resnet_model
-from models import ssd_model
-from models import trivial_model
-from models import vgg_model
-from models.experimental import deepspeech
-from models.experimental import official_ncf_model
+# from models import ssd_model
+# from models import trivial_model
+# from models import vgg_model
+# from models.experimental import deepspeech
+# from models.experimental import official_ncf_model
 
 
 _model_name_to_imagenet_model = {
-    'vgg11': vgg_model.Vgg11Model,
-    'vgg16': vgg_model.Vgg16Model,
-    'vgg19': vgg_model.Vgg19Model,
-    'lenet': lenet_model.Lenet5Model,
-    'googlenet': googlenet_model.GooglenetModel,
-    'overfeat': overfeat_model.OverfeatModel,
-    'alexnet': alexnet_model.AlexnetModel,
-    'trivial': trivial_model.TrivialModel,
-    'inception3': inception_model.Inceptionv3Model,
-    'inception4': inception_model.Inceptionv4Model,
+    # 'vgg11': vgg_model.Vgg11Model,
+    # 'vgg16': vgg_model.Vgg16Model,
+    # 'vgg19': vgg_model.Vgg19Model,
+    # 'lenet': lenet_model.Lenet5Model,
+    # 'googlenet': googlenet_model.GooglenetModel,
+    # 'overfeat': overfeat_model.OverfeatModel,
+    # 'alexnet': alexnet_model.AlexnetModel,
+    # 'trivial': trivial_model.TrivialModel,
+    # 'inception3': inception_model.Inceptionv3Model,
+    # 'inception4': inception_model.Inceptionv4Model,
     'official_resnet18_v2':
         partial(official_resnet_model.ImagenetResnetModel, 18),
     'official_resnet34_v2':
@@ -77,15 +77,15 @@ _model_name_to_imagenet_model = {
     'resnet101_v2': resnet_model.create_resnet101_v2_model,
     'resnet152': resnet_model.create_resnet152_model,
     'resnet152_v2': resnet_model.create_resnet152_v2_model,
-    'nasnet': nasnet_model.NasnetModel,
-    'nasnetlarge': nasnet_model.NasnetLargeModel,
-    'mobilenet': mobilenet_v2.MobilenetModel,
-    'ncf': official_ncf_model.NcfModel,
+    # 'nasnet': nasnet_model.NasnetModel,
+    # 'nasnetlarge': nasnet_model.NasnetLargeModel,
+    # 'mobilenet': mobilenet_v2.MobilenetModel,
+    # 'ncf': official_ncf_model.NcfModel,
 }
 
 
 _model_name_to_cifar_model = {
-    'alexnet': alexnet_model.AlexnetCifar10Model,
+    # 'alexnet': alexnet_model.AlexnetCifar10Model,
     'resnet20': resnet_model.create_resnet20_cifar_model,
     'resnet20_v2': resnet_model.create_resnet20_v2_cifar_model,
     'resnet32': resnet_model.create_resnet32_cifar_model,
@@ -96,16 +96,16 @@ _model_name_to_cifar_model = {
     'resnet56_v2': resnet_model.create_resnet56_v2_cifar_model,
     'resnet110': resnet_model.create_resnet110_cifar_model,
     'resnet110_v2': resnet_model.create_resnet110_v2_cifar_model,
-    'trivial': trivial_model.TrivialCifar10Model,
-    'densenet40_k12': densenet_model.create_densenet40_k12_model,
-    'densenet100_k12': densenet_model.create_densenet100_k12_model,
-    'densenet100_k24': densenet_model.create_densenet100_k24_model,
-    'nasnet': nasnet_model.NasnetCifarModel,
+    # 'trivial': trivial_model.TrivialCifar10Model,
+    # 'densenet40_k12': densenet_model.create_densenet40_k12_model,
+    # 'densenet100_k12': densenet_model.create_densenet100_k12_model,
+    # 'densenet100_k24': densenet_model.create_densenet100_k24_model,
+    # 'nasnet': nasnet_model.NasnetCifarModel,
 }
 
 
 _model_name_to_object_detection_model = {
-    'ssd300': ssd_model.SSD300Model
+    # 'ssd300': ssd_model.SSD300Model
 }
 
 

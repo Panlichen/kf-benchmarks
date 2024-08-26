@@ -1,0 +1,33 @@
+[arg] [0]=/HOME/scz1075/.conda/envs/kungfu/bin/python
+[arg] [1]=/HOME/scz1075/.local/bin/kungfu-run
+[arg] [2]=-np
+[arg] [3]=2
+[arg] [4]=python3
+[arg] [5]=tf_cnn_benchmarks.py
+[arg] [6]=--num_gpus=1
+[arg] [7]=--batch_size=32
+[arg] [8]=--model=resnet50
+[arg] [9]=--num_epochs=90
+[arg] [10]=--variable_update=hvd
+[nic] [0] lo :: 127.0.0.1/8, ::1/128
+[nic] [1] enp39s0f3u1u2c2 :: 
+[nic] [2] eno1 :: 10.254.24.54/22, fe80::3eec:efff:fef6:10e6/64
+[nic] [3] eno2 :: 
+[nic] [4] enp195s0f0 :: 
+[nic] [5] enp195s0f1 :: 
+[nic] [6] bond0 :: 10.254.130.113/24, fe80::ac0:ebff:fe3c:1a40/64
+[cuda-env]: CUDA_PATH=/data/apps/cuda/11.1
+[cuda-env]: CUDA_HOME=/data/apps/cuda/11.1
+[cuda-env]: CUDA_VISIBLE_DEVICES=0,1
+[cuda-env]: CUDA_ROOT=/data/apps/cuda/11.1
+[I] will parallel run 2 instances of python3 with ["tf_cnn_benchmarks.py" "--num_gpus=1" "--batch_size=32" "--model=resnet50" "--num_epochs=90" "--variable_update=hvd"]
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-08-26 14:58:09.443233: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-08-26 14:58:09.443237: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] FATAL Flags parsing error: flag --variable_update=hvd: value should be one of <parameter_server|replicated|distributed_replicated|independent|distributed_all_reduce|collective_all_reduce|horovod|kungfu>
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Pass --helpshort or --helpfull to see help on flags.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] FATAL Flags parsing error: flag --variable_update=hvd: value should be one of <parameter_server|replicated|distributed_replicated|independent|distributed_all_reduce|collective_all_reduce|horovod|kungfu>
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Pass --helpshort or --helpfull to see help on flags.
+[1;35m[E][m #<127.0.0.1.10000> exited with error: exit status 1
+[1;35m[E][m #<127.0.0.1.10001> exited with error: exit status 1
+[I] all 2/2 local peers finished, took 9.829773007s
+exit on error: 2 tasks failed at 47361697651211:/data/run01/scz1075/KungFu/srcs/go/kungfu/runner/simple.go:19
