@@ -1,34 +1,34 @@
-2024-08-26 14:58:48.159971: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
-2024-08-26 14:58:53.895042: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+2024-10-14 22:31:01.103039: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-14 22:31:50.229388: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
-2024-08-26 14:58:54.023730: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
-2024-08-26 14:58:54.131469: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
-pciBusID: 0000:c1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+2024-10-14 22:31:50.386424: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2024-10-14 22:32:11.222844: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
 coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
-2024-08-26 14:58:54.143420: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
-2024-08-26 14:58:54.531601: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
-2024-08-26 14:58:54.531679: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
-2024-08-26 14:58:54.601346: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
-2024-08-26 14:58:54.750236: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
-2024-08-26 14:58:55.058398: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
-2024-08-26 14:58:55.124361: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
-2024-08-26 14:58:55.205788: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
-2024-08-26 14:58:55.208077: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
-2024-08-26 14:58:55.208122: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
-2024-08-26 14:58:57.215554: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
-2024-08-26 14:58:57.215594: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
-2024-08-26 14:58:57.215603: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
-2024-08-26 14:58:57.219003: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22300 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:c1:00.0, compute capability: 8.6)
-2024-08-26 14:58:57.352637: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
-pciBusID: 0000:c1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+2024-10-14 22:32:11.240346: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-14 22:32:11.742640: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2024-10-14 22:32:11.742726: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2024-10-14 22:32:11.969163: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2024-10-14 22:32:12.158054: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2024-10-14 22:32:12.566674: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2024-10-14 22:32:12.705891: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2024-10-14 22:32:12.737487: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-14 22:32:12.739534: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2024-10-14 22:32:12.739561: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-14 22:32:15.283635: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-14 22:32:15.283686: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+2024-10-14 22:32:15.283696: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+2024-10-14 22:32:15.287012: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22300 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+2024-10-14 22:32:15.707976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
 coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
-2024-08-26 14:58:57.354546: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
-WARNING:tensorflow:From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Colocations handled automatically by placer.
-W0826 14:58:57.419780 47364019842432 deprecation.py:330] From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Colocations handled automatically by placer.
+2024-10-14 22:32:15.709928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2024-10-14 22:32:15.709963: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-14 22:32:15.709970: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+2024-10-14 22:32:15.709976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+2024-10-14 22:32:15.711940: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/device:GPU:0 with 22300 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+INFO:tensorflow:Using MirroredStrategy with devices ('/replica:0/task:0/device:GPU:0',)
+I1014 22:32:15.786993 47434608741760 mirrored_strategy.py:369] Using MirroredStrategy with devices ('/replica:0/task:0/device:GPU:0',)
 Traceback (most recent call last):
   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
@@ -44,16 +44,12 @@ Traceback (most recent call last):
     build_result = self._build_graph()
   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
     (input_producer_op, enqueue_ops, fetches) = self._build_model()
-  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
-    results = self.add_forward_pass_and_gradients(
-  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
-    outputs = maybe_compile(forward_pass_and_gradients, self.params)
-  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
-    return computation()
-  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3095, in forward_pass_and_gradients
-    l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in fp32_params])
-  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
-    return target(*args, **kwargs)
-  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/math_ops.py", line 3739, in add_n
-    raise ValueError("inputs must be an iterable of at least one "
-ValueError: inputs must be an iterable of at least one Tensor/IndexedSlices with the same dtype and shape
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2659, in _build_model
+    input_processing_info = self._build_input_processing(shift_ratio=0)
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2556, in _build_input_processing
+    input_preprocessor.build_multi_device_iterator(
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py", line 400, in build_multi_device_iterator
+    prepared_dataset = prepare_dataset(dataset)
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py", line 396, in prepare_dataset
+    dataset = dataset.batch(batch_size, drop_remainder=True)
+AttributeError: 'ImagenetDataset' object has no attribute 'batch'

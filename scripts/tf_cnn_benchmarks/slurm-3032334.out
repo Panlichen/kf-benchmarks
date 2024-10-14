@@ -1,0 +1,93 @@
+[arg] [0]=/HOME/scz1075/.conda/envs/kungfu/bin/python
+[arg] [1]=/HOME/scz1075/.local/bin/kungfu-run
+[arg] [2]=-np
+[arg] [3]=2
+[arg] [4]=python3
+[arg] [5]=tf_cnn_benchmarks.py
+[arg] [6]=--num_gpus=2
+[arg] [7]=--batch_size=32
+[arg] [8]=--model=resnet50
+[arg] [9]=--num_epochs=90
+[arg] [10]=--variable_update=horovod
+[nic] [0] lo :: 127.0.0.1/8, ::1/128
+[nic] [1] eno1 :: 10.254.25.32/22, fe80::3eec:efff:fe05:9912/64
+[nic] [2] enp39s0f3u1u2c2 :: 169.254.3.1/24, fe80::b23a:f2ff:feb6:59f/64
+[nic] [3] eno2 :: 
+[nic] [4] enp195s0f0 :: 
+[nic] [5] enp195s0f1 :: 
+[nic] [6] bond0 :: 10.254.129.40/24, fe80::9a03:9bff:fe62:5a28/64
+[cuda-env]: CUDA_PATH=/data/apps/cuda/11.1
+[cuda-env]: CUDA_HOME=/data/apps/cuda/11.1
+[cuda-env]: CUDA_VISIBLE_DEVICES=0,1
+[cuda-env]: CUDA_ROOT=/data/apps/cuda/11.1
+[I] will parallel run 2 instances of python3 with ["tf_cnn_benchmarks.py" "--num_gpus=2" "--batch_size=32" "--model=resnet50" "--num_epochs=90" "--variable_update=horovod"]
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:03:39.492460: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:03:39.492454: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:37.853913: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:37.853907: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:37.994462: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:37.994463: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:38.647016: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] pciBusID: 0000:e1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:38.647052: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:38.664551: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:38.664551: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:39.335136: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:39.335241: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:39.336222: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:39.336297: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:39.695074: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:39.695074: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:39.827619: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:39.827619: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:40.203484: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:40.205433: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:40.376264: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:40.376407: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:40.464418: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:40.464422: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:40.476646: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:40.476716: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:40.476645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:40.476699: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:42.742376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:42.742571: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:42.742610: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:42.742924: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:42.743109: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:42.743117: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:04:42.746673: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22302 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:e1:00.0, compute capability: 8.6)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:04:42.746731: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22302 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Traceback (most recent call last):
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Traceback (most recent call last):
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     _run_main(main, args)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     _run_main(main, args)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     sys.exit(main(argv))
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 50, in main
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     sys.exit(main(argv))
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 50, in main
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     bench = benchmark_cnn.BenchmarkCNN(params)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1288, in __init__
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     bench = benchmark_cnn.BenchmarkCNN(params)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1288, in __init__
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     raise ValueError('Horovod benchmarks require num_gpus=1 on each worker')
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] ValueError: Horovod benchmarks require num_gpus=1 on each worker
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     raise ValueError('Horovod benchmarks require num_gpus=1 on each worker')
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] ValueError: Horovod benchmarks require num_gpus=1 on each worker
+[1;35m[E][m #<127.0.0.1.10000> exited with error: exit status 1
+[1;35m[E][m #<127.0.0.1.10001> exited with error: exit status 1
+[I] all 2/2 local peers finished, took 1m26.258740579s
+exit on error: 2 tasks failed at 47154920552971:/data/run01/scz1075/KungFu/srcs/go/kungfu/runner/simple.go:19

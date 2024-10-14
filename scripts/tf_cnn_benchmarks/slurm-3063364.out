@@ -1,0 +1,747 @@
+2024-10-12 23:54:32.010169: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-12 23:54:32.010166: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-12 23:55:16.190684: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-12 23:55:16.190684: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-12 23:55:16.357876: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2024-10-12 23:55:16.357875: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2024-10-12 23:55:17.077821: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:25:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:17.077821: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:25:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:17.078689: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:17.078727: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:17.108778: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-12 23:55:17.108778: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-12 23:55:17.541684: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2024-10-12 23:55:17.541809: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2024-10-12 23:55:17.542531: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2024-10-12 23:55:17.542606: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2024-10-12 23:55:17.950429: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2024-10-12 23:55:17.950429: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2024-10-12 23:55:18.109069: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2024-10-12 23:55:18.109069: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2024-10-12 23:55:18.432953: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2024-10-12 23:55:18.432955: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2024-10-12 23:55:18.519895: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2024-10-12 23:55:18.519895: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2024-10-12 23:55:18.561760: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-12 23:55:18.561760: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-12 23:55:18.566078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2024-10-12 23:55:18.566113: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-12 23:55:18.566112: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2024-10-12 23:55:18.566138: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-12 23:55:21.677518: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-12 23:55:21.677585: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2024-10-12 23:55:21.677594: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N N 
+2024-10-12 23:55:21.677598: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   N N 
+2024-10-12 23:55:21.678891: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-12 23:55:21.678915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2024-10-12 23:55:21.678922: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N N 
+2024-10-12 23:55:21.678926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   N N 
+2024-10-12 23:55:21.683105: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 21893 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:25:00.0, compute capability: 8.6)
+2024-10-12 23:55:21.683124: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 21893 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:25:00.0, compute capability: 8.6)
+2024-10-12 23:55:21.776751: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 21893 MB memory) -> physical GPU (device: 1, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+2024-10-12 23:55:21.776794: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 21893 MB memory) -> physical GPU (device: 1, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+TensorFlow:  2.5
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  64 global
+             64.0 per device
+Num batches: 1801641
+Num epochs:  90.00
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   momentum
+Variables:   parameter_server
+==========
+TensorFlow:  2.5
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  64 global
+             64.0 per device
+Num batches: 1801641
+Num epochs:  90.00
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   momentum
+Variables:   parameter_server
+==========
+Generating training model
+Generating training model
+shapes: self.top_layer: [64, 3, 224, 224]
+shapes: network.top_layer 1: [64, 3, 224, 224]
+shapes: self.top_layer: [64, 3, 224, 224]
+shapes: network.top_layer 1: [64, 3, 224, 224]
+shapes: network.top_layer 2: [64, 3, 224, 224]
+shapes: network.top_layer 2: [64, 3, 224, 224]
+2024-10-12 23:55:22.100093: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:25:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:22.100121: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:25:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:22.100969: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:22.101011: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:22.104166: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2024-10-12 23:55:22.104244: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+WARNING:tensorflow:From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W1012 23:55:22.172924 47927392009600 deprecation.py:330] From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W1012 23:55:22.172924 47799864307072 deprecation.py:330] From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+cnn.top_layer.shape: [64, 64, 56, 256]
+cnn.top_layer.shape: [64, 64, 56, 256]
+cnn.top_layer.shape: [64, 64, 56, 256]
+cnn.top_layer.shape: [64, 64, 56, 256]
+cnn.top_layer.shape: [64, 64, 56, 256]
+cnn.top_layer.shape: [64, 64, 56, 256]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 32, 28, 512]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 16, 14, 1024]
+cnn.top_layer.shape: [64, 8, 7, 2048]
+cnn.top_layer.shape: [64, 8, 7, 2048]
+cnn.top_layer.shape: [64, 8, 7, 2048]
+cnn.top_layer.shape: [64, 8, 7, 2048]
+cnn.top_layer.shape: [64, 8, 7, 2048]
+shape: cnn.top_layer 11: [64, 8, 7, 2048]
+shape: self.top_layer 0000: [64, 8, 7, 2048]
+shape: self.top_layer 1111: [64, 8]
+shapes: network.top_layer 3: [64, 8]
+cnn.top_layer.shape: [64, 8, 7, 2048]
+shape: cnn.top_layer 11: [64, 8, 7, 2048]
+shape: self.top_layer 0000: [64, 8, 7, 2048]
+shape: self.top_layer 1111: [64, 8]
+shapes: network.top_layer 3: [64, 8]
+Initializing graph
+Initializing graph
+WARNING:tensorflow:From /data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2122: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+W1012 23:55:27.883595 47799864307072 deprecation.py:330] From /data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2122: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+WARNING:tensorflow:From /data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2122: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+W1012 23:55:27.885386 47927392009600 deprecation.py:330] From /data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2122: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2024-10-12 23:55:28.831549: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:25:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:28.832127: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:28.833917: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2024-10-12 23:55:28.833967: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-12 23:55:28.833976: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2024-10-12 23:55:28.833982: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N N 
+2024-10-12 23:55:28.833987: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   N N 
+2024-10-12 23:55:28.835552: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 21893 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:25:00.0, compute capability: 8.6)
+2024-10-12 23:55:28.835844: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:25:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:28.836329: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 1 with properties: 
+pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-12 23:55:28.837437: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 21893 MB memory) -> physical GPU (device: 1, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+2024-10-12 23:55:28.838444: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0, 1
+2024-10-12 23:55:28.838481: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-12 23:55:28.838489: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 1 
+2024-10-12 23:55:28.838496: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N N 
+2024-10-12 23:55:28.838500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 1:   N N 
+2024-10-12 23:55:28.839855: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 21893 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:25:00.0, compute capability: 8.6)
+2024-10-12 23:55:28.841252: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 21893 MB memory) -> physical GPU (device: 1, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+2024-10-12 23:55:29.753760: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2799955000 Hz
+2024-10-12 23:55:29.753761: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2799955000 Hz
+2024-10-12 23:55:31.853872: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 21.38G (22956933120 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.855145: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 19.24G (20661239808 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.856113: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 17.32G (18595115008 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.857083: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 15.59G (16735602688 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.858006: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 14.03G (15062041600 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.858937: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 12.62G (13555836928 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.859894: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 11.36G (12200252416 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.860812: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 10.23G (10980227072 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.861727: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 9.20G (9882204160 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.862641: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 8.28G (8893983744 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.863613: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 7.45G (8004584960 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.864540: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 6.71G (7204126208 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.865482: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 6.04G (6483713536 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.866418: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 5.43G (5835341824 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.867345: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 4.89G (5251807744 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.868281: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 4.40G (4726626816 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.869201: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 3.96G (4253964032 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.870120: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 3.57G (3828567552 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.871073: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 3.21G (3445710592 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.872003: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 2.89G (3101139456 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.872928: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 2.60G (2791025408 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.874051: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 2.34G (2511922688 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.874982: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 2.11G (2260730368 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.875925: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 1.89G (2034657280 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.876840: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 1.71G (1831191552 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+2024-10-12 23:55:31.877770: I tensorflow/stream_executor/cuda/cuda_driver.cc:789] failed to allocate 1.53G (1648072448 bytes) from device: CUDA_ERROR_OUT_OF_MEMORY: out of memory
+INFO:tensorflow:Running local_init_op.
+INFO:tensorflow:Running local_init_op.
+I1012 23:55:32.297856 47927392009600 session_manager.py:531] Running local_init_op.
+I1012 23:55:32.297909 47799864307072 session_manager.py:531] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I1012 23:55:32.463569 47927392009600 session_manager.py:534] Done running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I1012 23:55:32.463569 47799864307072 session_manager.py:534] Done running local_init_op.
+Running warm up
+Running warm up
+2024-10-12 23:55:39.008503: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-12 23:55:39.008500: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-12 23:55:40.397239: E tensorflow/stream_executor/cuda/cuda_dnn.cc:364] Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+2024-10-12 23:55:40.399953: E tensorflow/stream_executor/cuda/cuda_dnn.cc:364] Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+2024-10-12 23:55:40.410722: E tensorflow/stream_executor/cuda/cuda_dnn.cc:364] Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+2024-10-12 23:55:40.413250: E tensorflow/stream_executor/cuda/cuda_dnn.cc:364] Could not create cudnn handle: CUDNN_STATUS_INTERNAL_ERROR
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.UnknownError'>, 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+0 successful operations.
+0 derived errors ignored.
+
+Errors may have originated from an input operation.
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Original stack trace for 'tower_0/v/cg/conv2d/Conv2D':
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    bench.run()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    return self._benchmark_train()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+    build_result = self._build_graph()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+    (input_producer_op, enqueue_ops, fetches) = self._build_model()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+    results = self.add_forward_pass_and_gradients(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+    outputs = maybe_compile(forward_pass_and_gradients, self.params)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+    return computation()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3058, in forward_pass_and_gradients
+    build_network_result = self.model.build_network(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/model.py", line 266, in build_network
+    self.add_inference(network)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/resnet_model.py", line 311, in add_inference
+    cnn.conv(64, 7, 7, 2, 2, mode='SAME_RESNET', use_batch_norm=True)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 179, in conv
+    conv = self._conv2d_impl(input_layer, num_channels_in,
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 110, in _conv2d_impl
+    return keras_layers.Conv2D(filters, kernel_size, strides,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py", line 783, in __call__
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/convolutional.py", line 249, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+    return target(*args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1012, in convolution_v2
+    return convolution_internal(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1142, in convolution_internal
+    return op(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 2596, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/gen_nn_ops.py", line 969, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 748, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 3557, in _create_op_internal
+    ret = Operation(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 2045, in __init__
+    self._traceback = tf_stack.extract_stack_for_node(self._c_op)
+
+I1012 23:55:40.898945 47927392009600 coordinator.py:222] Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.UnknownError'>, 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+0 successful operations.
+0 derived errors ignored.
+
+Errors may have originated from an input operation.
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Original stack trace for 'tower_0/v/cg/conv2d/Conv2D':
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    bench.run()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    return self._benchmark_train()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+    build_result = self._build_graph()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+    (input_producer_op, enqueue_ops, fetches) = self._build_model()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+    results = self.add_forward_pass_and_gradients(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+    outputs = maybe_compile(forward_pass_and_gradients, self.params)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+    return computation()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3058, in forward_pass_and_gradients
+    build_network_result = self.model.build_network(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/model.py", line 266, in build_network
+    self.add_inference(network)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/resnet_model.py", line 311, in add_inference
+    cnn.conv(64, 7, 7, 2, 2, mode='SAME_RESNET', use_batch_norm=True)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 179, in conv
+    conv = self._conv2d_impl(input_layer, num_channels_in,
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 110, in _conv2d_impl
+    return keras_layers.Conv2D(filters, kernel_size, strides,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py", line 783, in __call__
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/convolutional.py", line 249, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+    return target(*args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1012, in convolution_v2
+    return convolution_internal(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1142, in convolution_internal
+    return op(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 2596, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/gen_nn_ops.py", line 969, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 748, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 3557, in _create_op_internal
+    ret = Operation(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 2045, in __init__
+    self._traceback = tf_stack.extract_stack_for_node(self._c_op)
+
+INFO:tensorflow:Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.UnknownError'>, 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+0 successful operations.
+0 derived errors ignored.
+
+Errors may have originated from an input operation.
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Original stack trace for 'tower_0/v/cg/conv2d/Conv2D':
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    bench.run()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    return self._benchmark_train()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+    build_result = self._build_graph()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+    (input_producer_op, enqueue_ops, fetches) = self._build_model()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+    results = self.add_forward_pass_and_gradients(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+    outputs = maybe_compile(forward_pass_and_gradients, self.params)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+    return computation()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3058, in forward_pass_and_gradients
+    build_network_result = self.model.build_network(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/model.py", line 266, in build_network
+    self.add_inference(network)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/resnet_model.py", line 311, in add_inference
+    cnn.conv(64, 7, 7, 2, 2, mode='SAME_RESNET', use_batch_norm=True)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 179, in conv
+    conv = self._conv2d_impl(input_layer, num_channels_in,
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 110, in _conv2d_impl
+    return keras_layers.Conv2D(filters, kernel_size, strides,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py", line 783, in __call__
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/convolutional.py", line 249, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+    return target(*args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1012, in convolution_v2
+    return convolution_internal(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1142, in convolution_internal
+    return op(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 2596, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/gen_nn_ops.py", line 969, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 748, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 3557, in _create_op_internal
+    ret = Operation(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 2045, in __init__
+    self._traceback = tf_stack.extract_stack_for_node(self._c_op)
+
+I1012 23:55:40.899362 47799864307072 coordinator.py:222] Error reported to Coordinator: <class 'tensorflow.python.framework.errors_impl.UnknownError'>, 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+0 successful operations.
+0 derived errors ignored.
+
+Errors may have originated from an input operation.
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Original stack trace for 'tower_0/v/cg/conv2d/Conv2D':
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    bench.run()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    return self._benchmark_train()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+    build_result = self._build_graph()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+    (input_producer_op, enqueue_ops, fetches) = self._build_model()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+    results = self.add_forward_pass_and_gradients(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+    outputs = maybe_compile(forward_pass_and_gradients, self.params)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+    return computation()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3058, in forward_pass_and_gradients
+    build_network_result = self.model.build_network(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/model.py", line 266, in build_network
+    self.add_inference(network)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/resnet_model.py", line 311, in add_inference
+    cnn.conv(64, 7, 7, 2, 2, mode='SAME_RESNET', use_batch_norm=True)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 179, in conv
+    conv = self._conv2d_impl(input_layer, num_channels_in,
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 110, in _conv2d_impl
+    return keras_layers.Conv2D(filters, kernel_size, strides,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py", line 783, in __call__
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/convolutional.py", line 249, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+    return target(*args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1012, in convolution_v2
+    return convolution_internal(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1142, in convolution_internal
+    return op(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 2596, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/gen_nn_ops.py", line 969, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 748, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 3557, in _create_op_internal
+    ret = Operation(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 2045, in __init__
+    self._traceback = tf_stack.extract_stack_for_node(self._c_op)
+
+Traceback (most recent call last):
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1375, in _do_call
+Traceback (most recent call last):
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1375, in _do_call
+    return fn(*args)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1359, in _run_fn
+    return self._call_tf_sessionrun(options, feed_dict, fetch_list,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1451, in _call_tf_sessionrun
+    return tf_session.TF_SessionRun_wrapper(self._session, options, feed_dict,
+tensorflow.python.framework.errors_impl.UnknownError: 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[{{node tower_0/v/cg/conv2d/Conv2D}}]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[{{node tower_0/v/cg/conv2d/Conv2D}}]]
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    return fn(*args)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1359, in _run_fn
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    return self._call_tf_sessionrun(options, feed_dict, fetch_list,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1451, in _call_tf_sessionrun
+    _run_main(main, args)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    return tf_session.TF_SessionRun_wrapper(self._session, options, feed_dict,
+tensorflow.python.framework.errors_impl.UnknownError: 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[{{node tower_0/v/cg/conv2d/Conv2D}}]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[{{node tower_0/v/cg/conv2d/Conv2D}}]]
+0 successful operations.
+0 derived errors ignored.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    bench.run()
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    return self._benchmark_train()
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1943, in _benchmark_train
+    sys.exit(main(argv))
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    return self._benchmark_graph(result_to_benchmark, eval_build_results)
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2164, in _benchmark_graph
+    bench.run()
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    stats = self.benchmark_with_session(
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2293, in benchmark_with_session
+    return self._benchmark_train()
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1943, in _benchmark_train
+    (summary_str, last_average_loss) = benchmark_one_step(
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 821, in benchmark_one_step
+    return self._benchmark_graph(result_to_benchmark, eval_build_results)
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2164, in _benchmark_graph
+    results = sess.run(fetches, options=run_options, run_metadata=run_metadata)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 967, in run
+    stats = self.benchmark_with_session(
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2293, in benchmark_with_session
+    result = self._run(None, fetches, feed_dict, options_ptr,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1190, in _run
+    results = self._do_run(handle, final_targets, final_fetches,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1368, in _do_run
+    (summary_str, last_average_loss) = benchmark_one_step(
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 821, in benchmark_one_step
+    return self._do_call(_run_fn, feeds, fetches, targets, options,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1394, in _do_call
+    results = sess.run(fetches, options=run_options, run_metadata=run_metadata)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 967, in run
+    raise type(e)(node_def, op, message)
+    result = self._run(None, fetches, feed_dict, options_ptr,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1190, in _run
+    results = self._do_run(handle, final_targets, final_fetches,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1368, in _do_run
+tensorflow.python.framework.errors_impl.UnknownError: 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+0 successful operations.
+0 derived errors ignored.
+
+Errors may have originated from an input operation.
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Original stack trace for 'tower_0/v/cg/conv2d/Conv2D':
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    bench.run()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    return self._benchmark_train()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+    build_result = self._build_graph()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+    (input_producer_op, enqueue_ops, fetches) = self._build_model()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+    results = self.add_forward_pass_and_gradients(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+    outputs = maybe_compile(forward_pass_and_gradients, self.params)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+    return computation()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3058, in forward_pass_and_gradients
+    build_network_result = self.model.build_network(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/model.py", line 266, in build_network
+    self.add_inference(network)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/resnet_model.py", line 311, in add_inference
+    cnn.conv(64, 7, 7, 2, 2, mode='SAME_RESNET', use_batch_norm=True)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 179, in conv
+    conv = self._conv2d_impl(input_layer, num_channels_in,
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 110, in _conv2d_impl
+    return keras_layers.Conv2D(filters, kernel_size, strides,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py", line 783, in __call__
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/convolutional.py", line 249, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+    return target(*args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1012, in convolution_v2
+    return convolution_internal(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1142, in convolution_internal
+    return op(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 2596, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/gen_nn_ops.py", line 969, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 748, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 3557, in _create_op_internal
+    ret = Operation(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 2045, in __init__
+    self._traceback = tf_stack.extract_stack_for_node(self._c_op)
+
+    return self._do_call(_run_fn, feeds, fetches, targets, options,
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/client/session.py", line 1394, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.UnknownError: 2 root error(s) found.
+  (0) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+	 [[average_loss/Mean/_897]]
+  (1) Unknown: Failed to get convolution algorithm. This is probably because cuDNN failed to initialize, so try looking to see if a warning log message was printed above.
+	 [[node tower_0/v/cg/conv2d/Conv2D (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:110) ]]
+0 successful operations.
+0 derived errors ignored.
+
+Errors may have originated from an input operation.
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Input Source operations connected to node tower_0/v/cg/conv2d/Conv2D:
+ tower_0/v/cg/Pad (defined at data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:178)
+
+Original stack trace for 'tower_0/v/cg/conv2d/Conv2D':
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+    bench.run()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+    return self._benchmark_train()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+    build_result = self._build_graph()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+    (input_producer_op, enqueue_ops, fetches) = self._build_model()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+    results = self.add_forward_pass_and_gradients(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+    outputs = maybe_compile(forward_pass_and_gradients, self.params)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+    return computation()
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3058, in forward_pass_and_gradients
+    build_network_result = self.model.build_network(
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/model.py", line 266, in build_network
+    self.add_inference(network)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/models/resnet_model.py", line 311, in add_inference
+    cnn.conv(64, 7, 7, 2, 2, mode='SAME_RESNET', use_batch_norm=True)
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 179, in conv
+    conv = self._conv2d_impl(input_layer, num_channels_in,
+  File "data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py", line 110, in _conv2d_impl
+    return keras_layers.Conv2D(filters, kernel_size, strides,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/engine/base_layer_v1.py", line 783, in __call__
+    outputs = call_fn(cast_inputs, *args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/convolutional.py", line 249, in call
+    outputs = self._convolution_op(inputs, self.kernel)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+    return target(*args, **kwargs)
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1012, in convolution_v2
+    return convolution_internal(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 1142, in convolution_internal
+    return op(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/nn_ops.py", line 2596, in _conv2d_expanded_batch
+    return gen_nn_ops.conv2d(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/gen_nn_ops.py", line 969, in conv2d
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 748, in _apply_op_helper
+    op = g._create_op_internal(op_type_name, inputs, dtypes=None,
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 3557, in _create_op_internal
+    ret = Operation(
+  File "HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/framework/ops.py", line 2045, in __init__
+    self._traceback = tf_stack.extract_stack_for_node(self._c_op)
+
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun detected that one or more processes exited with non-zero status, thus causing
+the job to be terminated. The first process to do so was:
+
+  Process name: [[62154,1],1]
+  Exit code:    1
+--------------------------------------------------------------------------

@@ -1406,7 +1406,7 @@ class BenchmarkCNN(object):
             import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
             self.num_workers = hvd.size()
         elif self.params.variable_update == 'kungfu':
-            from kungfu import current_cluster_size  # pylint: disable=g-import-not-at-top
+            from kungfu.python import current_cluster_size  # pylint: disable=g-import-not-at-top
             self.num_workers = current_cluster_size()
         else:
             self.num_workers = 1
@@ -2627,7 +2627,7 @@ class BenchmarkCNN(object):
             import horovod.tensorflow as hvd  # pylint: disable=g-import-not-at-top
             seed_adjustment = hvd.rank()
         elif self.params.variable_update == 'kungfu':
-            from kungfu import current_rank  # pylint: disable=g-import-not-at-top
+            from kungfu.python import current_rank  # pylint: disable=g-import-not-at-top
             seed_adjustment = current_rank()
         else:
             seed_adjustment = 0

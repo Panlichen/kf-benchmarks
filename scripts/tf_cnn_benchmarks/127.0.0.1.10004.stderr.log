@@ -1,0 +1,22 @@
+2024-10-10 18:16:19.787235: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-10 18:17:12.190193: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-10 18:17:12.481981: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2024-10-10 18:17:12.538361: E tensorflow/stream_executor/cuda/cuda_driver.cc:328] failed call to cuInit: CUDA_ERROR_NO_DEVICE: no CUDA-capable device is detected
+2024-10-10 18:17:12.553718: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:169] retrieving CUDA diagnostic information for host: g0060.para.ai
+2024-10-10 18:17:12.558084: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:176] hostname: g0060.para.ai
+2024-10-10 18:17:12.645644: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:200] libcuda reported version is: 535.104.5
+2024-10-10 18:17:12.667405: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:204] kernel reported version is: 535.104.5
+2024-10-10 18:17:12.667423: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:310] kernel version seems to match DSO: 535.104.5
+Traceback (most recent call last):
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+    app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+    _run_main(main, args)
+  File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+    sys.exit(main(argv))
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 50, in main
+    bench = benchmark_cnn.BenchmarkCNN(params)
+  File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1409, in __init__
+    from kungfu import current_cluster_size  # pylint: disable=g-import-not-at-top
+ImportError: cannot import name 'current_cluster_size' from 'kungfu' (/HOME/scz1075/.local/lib/python3.9/site-packages/kungfu/__init__.py)

@@ -1,0 +1,110 @@
+2024-10-10 17:54:47.747606: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-10 17:56:26.209785: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-10-10 17:56:26.664292: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+2024-10-10 17:56:27.337899: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:e1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-10 17:56:27.362675: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-10 17:56:28.388200: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2024-10-10 17:56:28.388332: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+2024-10-10 17:56:28.632554: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+2024-10-10 17:56:28.856601: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+2024-10-10 17:56:29.318843: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+2024-10-10 17:56:29.464816: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+2024-10-10 17:56:29.631897: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-10 17:56:29.660444: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2024-10-10 17:56:29.685487: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+2024-10-10 17:56:32.992823: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-10 17:56:32.992921: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+2024-10-10 17:56:32.992939: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+2024-10-10 17:56:33.011261: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22302 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:e1:00.0, compute capability: 8.6)
+2024-10-10 17:56:36.378840: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:e1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-10 17:56:36.379834: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+WARNING:tensorflow:From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W1010 17:56:36.543939 47083830074752 deprecation.py:330] From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+WARNING:tensorflow:From /data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2122: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+W1010 17:56:42.295680 47083830074752 deprecation.py:330] From /data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2122: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2024-10-10 17:56:43.039750: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+pciBusID: 0000:e1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+2024-10-10 17:56:43.040825: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+2024-10-10 17:56:43.040878: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+2024-10-10 17:56:43.040892: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+2024-10-10 17:56:43.040903: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+2024-10-10 17:56:43.043314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22302 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:e1:00.0, compute capability: 8.6)
+2024-10-10 17:56:44.000338: I tensorflow/core/platform/profile_utils/cpu_utils.cc:114] CPU Frequency: 2599975000 Hz
+INFO:tensorflow:Running local_init_op.
+I1010 17:56:45.449674 47083830074752 session_manager.py:531] Running local_init_op.
+INFO:tensorflow:Done running local_init_op.
+I1010 17:56:45.660741 47083830074752 session_manager.py:534] Done running local_init_op.
+2024-10-10 17:56:50.937926: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+2024-10-10 17:56:53.949777: I tensorflow/stream_executor/cuda/cuda_dnn.cc:359] Loaded cuDNN version 8101
+2024-10-10 17:57:04.834692: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+2024-10-10 17:57:06.410616: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+TensorFlow:  2.5
+Model:       resnet50
+Dataset:     imagenet (synthetic)
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  40 global
+             40.0 per device
+Num batches: 100
+Num epochs:  0.00
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+shapes: self.top_layer: [40, 3, 224, 224]
+shapes: network.top_layer 1: [40, 3, 224, 224]
+shapes: network.top_layer 2: [40, 3, 224, 224]
+cnn.top_layer.shape: [40, 64, 56, 256]
+cnn.top_layer.shape: [40, 64, 56, 256]
+cnn.top_layer.shape: [40, 64, 56, 256]
+cnn.top_layer.shape: [40, 32, 28, 512]
+cnn.top_layer.shape: [40, 32, 28, 512]
+cnn.top_layer.shape: [40, 32, 28, 512]
+cnn.top_layer.shape: [40, 32, 28, 512]
+cnn.top_layer.shape: [40, 16, 14, 1024]
+cnn.top_layer.shape: [40, 16, 14, 1024]
+cnn.top_layer.shape: [40, 16, 14, 1024]
+cnn.top_layer.shape: [40, 16, 14, 1024]
+cnn.top_layer.shape: [40, 16, 14, 1024]
+cnn.top_layer.shape: [40, 16, 14, 1024]
+cnn.top_layer.shape: [40, 8, 7, 2048]
+cnn.top_layer.shape: [40, 8, 7, 2048]
+cnn.top_layer.shape: [40, 8, 7, 2048]
+shape: cnn.top_layer 11: [40, 8, 7, 2048]
+shape: self.top_layer 0000: [40, 8, 7, 2048]
+shape: self.top_layer 1111: [40, 8]
+shapes: network.top_layer 3: [40, 8]
+Initializing graph
+Running warm up
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 370.7 +/- 0.0 (jitter = 0.0)	nan
+10	images/sec: 371.7 +/- 0.4 (jitter = 1.1)	nan
+20	images/sec: 371.6 +/- 0.3 (jitter = 1.2)	nan
+30	images/sec: 371.3 +/- 0.3 (jitter = 1.0)	nan
+40	images/sec: 371.6 +/- 0.2 (jitter = 1.1)	nan
+50	images/sec: 371.7 +/- 0.2 (jitter = 1.2)	nan
+60	images/sec: 371.8 +/- 0.2 (jitter = 1.0)	nan
+70	images/sec: 371.9 +/- 0.2 (jitter = 1.1)	nan
+80	images/sec: 372.1 +/- 0.2 (jitter = 1.1)	nan
+90	images/sec: 372.1 +/- 0.1 (jitter = 1.1)	nan
+100	images/sec: 372.1 +/- 0.1 (jitter = 1.0)	nan
+----------------------------------------------------------------
+total images/sec: 369.79
+----------------------------------------------------------------

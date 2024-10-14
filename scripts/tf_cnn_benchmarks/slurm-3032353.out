@@ -1,0 +1,221 @@
+[arg] [0]=/HOME/scz1075/.conda/envs/kungfu/bin/python
+[arg] [1]=/HOME/scz1075/.local/bin/kungfu-run
+[arg] [2]=-np
+[arg] [3]=2
+[arg] [4]=python3
+[arg] [5]=tf_cnn_benchmarks.py
+[arg] [6]=--num_gpus=1
+[arg] [7]=--batch_size=32
+[arg] [8]=--model=resnet50
+[arg] [9]=--num_epochs=90
+[arg] [10]=--variable_update=horovod
+[nic] [0] lo :: 127.0.0.1/8, ::1/128
+[nic] [1] eno1 :: 10.254.25.32/22, fe80::3eec:efff:fe05:9912/64
+[nic] [2] enp39s0f3u1u2c2 :: 169.254.3.1/24, fe80::b23a:f2ff:feb6:59f/64
+[nic] [3] eno2 :: 
+[nic] [4] enp195s0f0 :: 
+[nic] [5] enp195s0f1 :: 
+[nic] [6] bond0 :: 10.254.129.40/24, fe80::9a03:9bff:fe62:5a28/64
+[cuda-env]: CUDA_PATH=/data/apps/cuda/11.1
+[cuda-env]: CUDA_HOME=/data/apps/cuda/11.1
+[cuda-env]: CUDA_VISIBLE_DEVICES=0,1
+[cuda-env]: CUDA_ROOT=/data/apps/cuda/11.1
+[I] will parallel run 2 instances of python3 with ["tf_cnn_benchmarks.py" "--num_gpus=1" "--batch_size=32" "--model=resnet50" "--num_epochs=90" "--variable_update=horovod"]
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:06:15.198808: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:06:15.198806: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:14.216933: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:14.216915: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:14.308033: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:14.308033: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:14.471149: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:14.471132: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] pciBusID: 0000:e1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:14.486235: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:14.486217: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:14.908385: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:14.908451: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:14.909612: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:14.909720: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:15.388907: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:15.388904: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:15.501872: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:15.501862: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:15.960852: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:15.962062: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:16.123498: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:16.123739: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:16.211217: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:16.211216: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:16.213364: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:16.213406: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:16.213393: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:16.213427: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:18.528336: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:18.528400: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:18.528407: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:18.528328: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:18.528402: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:18.528414: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:18.531538: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22302 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:18.531962: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22302 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:e1:00.0, compute capability: 8.6)
+[[1;32m127.0.0.1.10000[m::stdout] TensorFlow:  2.5
+[[1;34m127.0.0.1.10001[m::stdout] TensorFlow:  2.5
+[[1;34m127.0.0.1.10001[m::stdout] Model:       resnet50
+[[1;34m127.0.0.1.10001[m::stdout] Dataset:     imagenet (synthetic)
+[[1;34m127.0.0.1.10001[m::stdout] Mode:        BenchmarkMode.TRAIN
+[[1;34m127.0.0.1.10001[m::stdout] SingleSess:  False
+[[1;34m127.0.0.1.10001[m::stdout] Batch size:  32 global
+[[1;34m127.0.0.1.10001[m::stdout]              32.0 per device
+[[1;34m127.0.0.1.10001[m::stdout] Num batches: 3603282
+[[1;34m127.0.0.1.10001[m::stdout] Num epochs:  90.00
+[[1;34m127.0.0.1.10001[m::stdout] Devices:     ['horovod/gpu:0']
+[[1;34m127.0.0.1.10001[m::stdout] Data format: NCHW
+[[1;34m127.0.0.1.10001[m::stdout] Optimizer:   sgd
+[[1;34m127.0.0.1.10001[m::stdout] Variables:   horovod
+[[1;34m127.0.0.1.10001[m::stdout] ==========
+[[1;34m127.0.0.1.10001[m::stdout] Generating training model
+[[1;34m127.0.0.1.10001[m::stdout] shapes: self.top_layer: [32, 3, 224, 224]
+[[1;34m127.0.0.1.10001[m::stdout] shapes: network.top_layer 1: [32, 3, 224, 224]
+[[1;34m127.0.0.1.10001[m::stdout] shapes: network.top_layer 2: [32, 3, 224, 224]
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:18.841814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] pciBusID: 0000:e1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:18.841855: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-10 18:07:18.843811: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-10 18:07:18.843858: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] WARNING:tensorflow:From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Instructions for updating:
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Colocations handled automatically by placer.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] W1010 18:07:18.901514 47571061513600 deprecation.py:330] From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Instructions for updating:
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Colocations handled automatically by placer.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] WARNING:tensorflow:From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Instructions for updating:
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Colocations handled automatically by placer.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] W1010 18:07:18.901518 46989042539904 deprecation.py:330] From /HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/keras/layers/normalization.py:534: _colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Instructions for updating:
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Colocations handled automatically by placer.
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 64, 56, 256]
+[[1;32m127.0.0.1.10000[m::stdout] Model:       resnet50
+[[1;32m127.0.0.1.10000[m::stdout] Dataset:     imagenet (synthetic)
+[[1;32m127.0.0.1.10000[m::stdout] Mode:        BenchmarkMode.TRAIN
+[[1;32m127.0.0.1.10000[m::stdout] SingleSess:  False
+[[1;32m127.0.0.1.10000[m::stdout] Batch size:  32 global
+[[1;32m127.0.0.1.10000[m::stdout]              32.0 per device
+[[1;32m127.0.0.1.10000[m::stdout] Num batches: 3603282
+[[1;32m127.0.0.1.10000[m::stdout] Num epochs:  90.00
+[[1;32m127.0.0.1.10000[m::stdout] Devices:     ['horovod/gpu:0']
+[[1;32m127.0.0.1.10000[m::stdout] Data format: NCHW
+[[1;32m127.0.0.1.10000[m::stdout] Optimizer:   sgd
+[[1;32m127.0.0.1.10000[m::stdout] Variables:   horovod
+[[1;32m127.0.0.1.10000[m::stdout] ==========
+[[1;32m127.0.0.1.10000[m::stdout] Generating training model
+[[1;32m127.0.0.1.10000[m::stdout] shapes: self.top_layer: [32, 3, 224, 224]
+[[1;32m127.0.0.1.10000[m::stdout] shapes: network.top_layer 1: [32, 3, 224, 224]
+[[1;32m127.0.0.1.10000[m::stdout] shapes: network.top_layer 2: [32, 3, 224, 224]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 64, 56, 256]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 64, 56, 256]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 64, 56, 256]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 64, 56, 256]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 64, 56, 256]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 32, 28, 512]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 16, 14, 1024]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 8, 7, 2048]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 8, 7, 2048]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 8, 7, 2048]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 8, 7, 2048]
+[[1;34m127.0.0.1.10001[m::stdout] cnn.top_layer.shape: [32, 8, 7, 2048]
+[[1;34m127.0.0.1.10001[m::stdout] shape: cnn.top_layer 11: [32, 8, 7, 2048]
+[[1;34m127.0.0.1.10001[m::stdout] shape: self.top_layer 0000: [32, 8, 7, 2048]
+[[1;34m127.0.0.1.10001[m::stdout] shape: self.top_layer 1111: [32, 8]
+[[1;34m127.0.0.1.10001[m::stdout] shapes: network.top_layer 3: [32, 8]
+[[1;32m127.0.0.1.10000[m::stdout] cnn.top_layer.shape: [32, 8, 7, 2048]
+[[1;32m127.0.0.1.10000[m::stdout] shape: cnn.top_layer 11: [32, 8, 7, 2048]
+[[1;32m127.0.0.1.10000[m::stdout] shape: self.top_layer 0000: [32, 8, 7, 2048]
+[[1;32m127.0.0.1.10000[m::stdout] shape: self.top_layer 1111: [32, 8]
+[[1;32m127.0.0.1.10000[m::stdout] shapes: network.top_layer 3: [32, 8]
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Traceback (most recent call last):
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Traceback (most recent call last):
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     _run_main(main, args)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     _run_main(main, args)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     sys.exit(main(argv))
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     sys.exit(main(argv))
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 56, in main
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     bench.run()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     bench.run()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1755, in run
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     return self._benchmark_train()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     return self._benchmark_train()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1934, in _benchmark_train
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     build_result = self._build_graph()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     build_result = self._build_graph()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1968, in _build_graph
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     (input_producer_op, enqueue_ops, fetches) = self._build_model()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     (input_producer_op, enqueue_ops, fetches) = self._build_model()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 2668, in _build_model
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     results = self.add_forward_pass_and_gradients(
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     results = self.add_forward_pass_and_gradients(
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3207, in add_forward_pass_and_gradients
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     outputs = maybe_compile(forward_pass_and_gradients, self.params)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     outputs = maybe_compile(forward_pass_and_gradients, self.params)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3401, in maybe_compile
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     return computation()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3095, in forward_pass_and_gradients
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     return computation()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 3095, in forward_pass_and_gradients
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in fp32_params])
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     l2_loss = tf.add_n([tf.nn.l2_loss(v) for v in fp32_params])
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 206, in wrapper
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     return target(*args, **kwargs)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/math_ops.py", line 3739, in add_n
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     return target(*args, **kwargs)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/tensorflow/python/ops/math_ops.py", line 3739, in add_n
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     raise ValueError("inputs must be an iterable of at least one "
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] ValueError: inputs must be an iterable of at least one Tensor/IndexedSlices with the same dtype and shape
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     raise ValueError("inputs must be an iterable of at least one "
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] ValueError: inputs must be an iterable of at least one Tensor/IndexedSlices with the same dtype and shape
+[1;35m[E][m #<127.0.0.1.10000> exited with error: exit status 1
+[1;35m[E][m #<127.0.0.1.10001> exited with error: exit status 1
+[I] all 2/2 local peers finished, took 1m30.648912961s
+exit on error: 2 tasks failed at 47350169811467:/data/run01/scz1075/KungFu/srcs/go/kungfu/runner/simple.go:19

@@ -1,0 +1,99 @@
+[arg] [0]=/HOME/scz1075/.conda/envs/kungfu/bin/python
+[arg] [1]=/HOME/scz1075/.local/bin/kungfu-run
+[arg] [2]=-np
+[arg] [3]=2
+[arg] [4]=/HOME/scz1075/.conda/envs/kungfu/bin/python3
+[arg] [5]=tf_cnn_benchmarks.py
+[arg] [6]=--batch_size=64
+[arg] [7]=--model=resnet50
+[arg] [8]=--optimizer=momentum
+[arg] [9]=--variable_update=kungfu
+[arg] [10]=--kungfu_option=sync_sgd
+[arg] [11]=--nodistortions
+[arg] [12]=--num_gpus=1
+[arg] [13]=--num_epochs=90
+[arg] [14]=--weight_decay=1e-4
+[nic] [0] lo :: 127.0.0.1/8, ::1/128
+[nic] [1] enp39s0f3u1u2c2 :: 169.254.3.1/24, fe80::b23a:f2ff:feb6:59f/64
+[nic] [2] eno1 :: 10.254.25.45/22, fe80::3eec:efff:fe05:99c0/64
+[nic] [3] eno2 :: 
+[nic] [4] enp195s0f0 :: 
+[nic] [5] enp195s0f1 :: 
+[nic] [6] bond0 :: 10.254.129.53/24, fe80::9a03:9bff:fe77:a00e/64
+[cuda-env]: CUDA_PATH=/data/apps/cuda/11.1
+[cuda-env]: CUDA_HOME=/data/apps/cuda/11.1
+[cuda-env]: CUDA_VISIBLE_DEVICES=0,1
+[cuda-env]: CUDA_ROOT=/data/apps/cuda/11.1
+[I] will parallel run 2 instances of /HOME/scz1075/.conda/envs/kungfu/bin/python3 with ["tf_cnn_benchmarks.py" "--batch_size=64" "--model=resnet50" "--optimizer=momentum" "--variable_update=kungfu" "--kungfu_option=sync_sgd" "--nodistortions" "--num_gpus=1" "--num_epochs=90" "--weight_decay=1e-4"]
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:11.562078: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:11.562074: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::stdout] KungFu does not require to call init()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:22.984740: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:22.984740: I tensorflow/core/platform/cpu_feature_guard.cc:142] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+[[1;32m127.0.0.1.10000[m::stdout] KungFu does not require to call init()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:22.990460: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:22.990460: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcuda.so.1
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.267066: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] pciBusID: 0000:41:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.267067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1733] Found device 0 with properties: 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] pciBusID: 0000:a1:00.0 name: NVIDIA GeForce RTX 3090 computeCapability: 8.6
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] coreClock: 1.695GHz coreCount: 82 deviceMemorySize: 23.69GiB deviceMemoryBandwidth: 871.81GiB/s
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.267660: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.267660: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.429214: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.429351: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.429214: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublas.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.429350: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcublasLt.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.500960: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.500960: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcufft.so.10
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.553778: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.553778: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcurand.so.10
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.828750: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.828750: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusolver.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:24.977880: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:24.977879: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcusparse.so.11
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:25.068745: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:25.068744: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudnn.so.8
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:25.071590: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:25.071624: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:25.071583: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1871] Adding visible gpu devices: 0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:25.071624: I tensorflow/stream_executor/platform/default/dso_loader.cc:53] Successfully opened dynamic library libcudart.so.11.0
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:26.982640: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:26.982710: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:26.982720: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] 2024-10-12 17:16:26.985088: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22300 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:41:00.0, compute capability: 8.6)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] Traceback (most recent call last):
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     _run_main(main, args)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     sys.exit(main(argv))
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 50, in main
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     bench = benchmark_cnn.BenchmarkCNN(params)
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1409, in __init__
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m]     from kungfu import current_cluster_size  # pylint: disable=g-import-not-at-top
+[[1;32m127.0.0.1.10000[m::[1;35mstderr[m] ImportError: cannot import name 'current_cluster_size' from 'kungfu' (/HOME/scz1075/.local/lib/python3.9/site-packages/kungfu/__init__.py)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:27.011376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1258] Device interconnect StreamExecutor with strength 1 edge matrix:
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:27.011449: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1264]      0 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:27.011459: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1277] 0:   N 
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] 2024-10-12 17:16:27.013231: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1418] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 22300 MB memory) -> physical GPU (device: 0, name: NVIDIA GeForce RTX 3090, pci bus id: 0000:a1:00.0, compute capability: 8.6)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] Traceback (most recent call last):
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 64, in <module>
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     app.run(main)  # Raises error on invalid flags, unlike tf.app.run()
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 312, in run
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     _run_main(main, args)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/HOME/scz1075/.conda/envs/kungfu/lib/python3.9/site-packages/absl/app.py", line 258, in _run_main
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     sys.exit(main(argv))
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/tf_cnn_benchmarks.py", line 50, in main
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     bench = benchmark_cnn.BenchmarkCNN(params)
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]   File "/data/run01/scz1075/kf-benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py", line 1409, in __init__
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m]     from kungfu import current_cluster_size  # pylint: disable=g-import-not-at-top
+[[1;34m127.0.0.1.10001[m::[1;35mstderr[m] ImportError: cannot import name 'current_cluster_size' from 'kungfu' (/HOME/scz1075/.local/lib/python3.9/site-packages/kungfu/__init__.py)
+[1;35m[E][m #<127.0.0.1.10001> exited with error: exit status 1
+[1;35m[E][m #<127.0.0.1.10000> exited with error: exit status 1
+[I] all 2/2 local peers finished, took 20.460599616s
+exit on error: 2 tasks failed at 47424238451211:/data/run01/scz1075/KungFu/srcs/go/kungfu/runner/simple.go:19
