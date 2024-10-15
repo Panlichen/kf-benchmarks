@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --gpus=1
+#SBATCH --gpus=4
 module load anaconda3/2024.02-1 go/1.18.2 cmake/3.22.0 cuda/11.1 cudnn/8.1.1_cuda11.x gcc/7.5
 
 source activate kungfu
@@ -23,4 +23,4 @@ DATA_DIR=/HOME/scz1075/run/data/tiny-imagenet-200/tfrecords
 # --nodistortions --num_gpus=1 \
 # --num_epochs=90 --weight_decay=1e-4 --data_dir=${DATA_DIR}
 
-python tf_cnn_benchmarks.py --num_gpus=1 --batch_size=40 --model=resnet50 --variable_update=kungfu
+python tf_cnn_benchmarks.py --num_gpus=4 --batch_size=40 --model=resnet50 --variable_update=parameter_server
